@@ -2,12 +2,10 @@ let map;
 let marcadores = []; 
 let monumentos = [];
 
-// MAPA 
+// CREO EL MAPA CON LEAFLET
 function initMapa() {
   map = L.map('mapa').setView([36.7213, -4.4217], 16);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 }
 
 // CARGAMOS LOS DATOS DE LOS MONUMENTOS DESDE LA API
@@ -154,6 +152,14 @@ async function iniciarSesion() {
       errorEl.classList.add('d-none');
       actualizarBotonesLogin();
       renderLista();
+      Swal.fire({
+        icon: 'success',
+        title: `¡Bienvenido, ${data.usuario}!`,
+        timer: 1500,
+        showConfirmButton: false,
+        scrollbarPadding: false,
+        heightAuto: false
+      });
     } else {
       errorEl.classList.remove('d-none');
     }
