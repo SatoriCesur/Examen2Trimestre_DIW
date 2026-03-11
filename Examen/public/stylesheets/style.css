@@ -1,8 +1,66 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-a {
-  color: #00B7FF;
+#mapa {
+  min-height: 0;
 }
+
+#sidebar {
+  width: 420px;
+  min-width: 380px;
+  max-width: 460px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.lista-item {
+  transition: background-color 0.2s;
+}
+
+.lista-item:hover {
+  background-color: #f0f4ff;
+  cursor: pointer;
+}
+
+.lista-item.activo {
+  background-color: #dce8ff;
+  border-left: 4px solid #0d6efd !important;
+}
+
+.btn-fav {
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.btn-fav:hover {
+  transform: scale(1.15);
+  border-color: #dc3545;
+}
+
+.btn-fav.activo {
+  border-color: #dc3545;
+  background-color: #fff0f0;
+}
+
+#sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+#sidebar::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+
